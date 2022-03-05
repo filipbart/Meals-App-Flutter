@@ -63,7 +63,7 @@ class _MyAppState extends State<MyApp> {
     }
   }
 
-  bool _isMealFavorite(String id){
+  bool _isMealFavorite(String id) {
     return _favoriteMeals.any((meal) => meal.id == id);
   }
 
@@ -72,27 +72,28 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'DeliMeals',
       theme: ThemeData(
-        primarySwatch: Colors.pink,
-        accentColor: Colors.amber,
         canvasColor: Color.fromARGB(255, 255, 229, 255),
         fontFamily: 'Raleway',
         textTheme: ThemeData.light().textTheme.copyWith(
-              body1: TextStyle(
+              bodyText1: TextStyle(
                 color: Color.fromRGBO(20, 51, 51, 1),
               ),
-              title: TextStyle(
+              titleLarge: TextStyle(
                 fontSize: 20,
                 fontFamily: 'RobotoCondensed',
                 fontWeight: FontWeight.bold,
               ),
             ),
+        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.pink)
+            .copyWith(secondary: Colors.amber),
       ),
       initialRoute: '/',
       routes: {
         '/': (ctx) => TabsScreen(_favoriteMeals),
         CategoryMealsScreen.routeName: (ctx) =>
             CategoryMealsScreen(_availableMeals),
-        MealDetailScreen.routeName: (ctx) => MealDetailScreen(_toggleFavorite, _isMealFavorite),
+        MealDetailScreen.routeName: (ctx) =>
+            MealDetailScreen(_toggleFavorite, _isMealFavorite),
         FiltersScreen.routeName: (ctx) => FiltersScreen(_filters, _setFilters),
       },
       onUnknownRoute: (settings) {

@@ -54,7 +54,7 @@ class MealItem extends StatelessWidget {
       arguments: id,
     )
         .then((result) {
-      if(result != null){
+      if (result != null) {
         //removeItem(result);
       }
     });
@@ -122,7 +122,7 @@ class MealItem extends StatelessWidget {
                       SizedBox(
                         width: 6,
                       ),
-                      Text('${duration} min'),
+                      Text('$duration min'),
                     ],
                   ),
                   Row(

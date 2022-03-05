@@ -20,8 +20,8 @@ class _FiltersScreenState extends State<FiltersScreen> {
   bool _vegan = false;
   bool _lactoseFree = false;
 
-@override
-  initState(){
+  @override
+  initState() {
     _glutenFree = widget.currentFilters['gluten'];
     _vegetarian = widget.currentFilters['vegetarian'];
     _lactoseFree = widget.currentFilters['lactose'];
@@ -67,7 +67,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
             padding: EdgeInsets.all(20),
             child: Text(
               'Adjusty your meal selection',
-              style: Theme.of(context).textTheme.title,
+              style: Theme.of(context).textTheme.titleLarge,
             ),
           ),
           Expanded(

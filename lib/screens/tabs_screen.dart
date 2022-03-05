@@ -20,15 +20,17 @@ class _TabsScreenState extends State<TabsScreen> {
   @override
   void initState() {
     _pages = [
-    {
-      'page': CategoriesScreen(),
-      'title': 'Categories',
-    },
-    {
-      'page': FavoritesScreen(widget.favoriteMeals,),
-      'title': 'Your favorites!',
-    },
-  ];
+      {
+        'page': CategoriesScreen(),
+        'title': 'Categories',
+      },
+      {
+        'page': FavoritesScreen(
+          widget.favoriteMeals,
+        ),
+        'title': 'Your favorites!',
+      },
+    ];
     super.initState();
   }
 
@@ -50,16 +52,16 @@ class _TabsScreenState extends State<TabsScreen> {
         onTap: _selectPage,
         backgroundColor: Theme.of(context).primaryColor,
         unselectedItemColor: Colors.white,
-        selectedItemColor: Theme.of(context).accentColor,
+        selectedItemColor: Theme.of(context).colorScheme.secondary,
         currentIndex: _selectedPageIndex,
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.category),
-            title: Text('Categories'),
+            label: 'Categories',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.stars),
-            title: Text('Favorites'),
+            label: 'Favorites',
           ),
         ],
       ),
